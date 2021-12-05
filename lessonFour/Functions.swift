@@ -130,3 +130,4 @@ func startTheTravel() {
 
     starting == "1" ? print("☀️ 🚗💨") : print("Bye Bye!")
 }
+
