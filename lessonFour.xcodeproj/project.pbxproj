@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BBE7BEB2275BC68A0003520E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7BEB1275BC68A0003520E /* main.swift */; };
+		BBE7BEB9275BC6A50003520E /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7BEB8275BC6A50003520E /* Classes.swift */; };
+		BBE7BEBB275BD2FE0003520E /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7BEBA275BD2FE0003520E /* Functions.swift */; };
+		BBE7BEBD275CABB20003520E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7BEBC275CABB20003520E /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		BBE7BEAE275BC68A0003520E /* lessonFour */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lessonFour; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE7BEB1275BC68A0003520E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BBE7BEB8275BC6A50003520E /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
+		BBE7BEBA275BD2FE0003520E /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		BBE7BEBC275CABB20003520E /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				BBE7BEB1275BC68A0003520E /* main.swift */,
+				BBE7BEB8275BC6A50003520E /* Classes.swift */,
+				BBE7BEBA275BD2FE0003520E /* Functions.swift */,
+				BBE7BEBC275CABB20003520E /* Enums.swift */,
 			);
 			path = lessonFour;
 			sourceTree = "<group>";
@@ -120,7 +129,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE7BEB9275BC6A50003520E /* Classes.swift in Sources */,
 				BBE7BEB2275BC68A0003520E /* main.swift in Sources */,
+				BBE7BEBD275CABB20003520E /* Enums.swift in Sources */,
+				BBE7BEBB275BD2FE0003520E /* Functions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
