@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BBD3C346275FE5910095D683 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C345275FE5910095D683 /* Protocols.swift */; };
-		BBD3C348275FE6960095D683 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C347275FE6960095D683 /* Extensions.swift */; };
-		BBD3C34A275FE6E70095D683 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C349275FE6E70095D683 /* Enum.swift */; };
-		BBD3C34C275FEAAF0095D683 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C34B275FEAAF0095D683 /* Classes.swift */; };
 		BBE7BEB2275BC68A0003520E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7BEB1275BC68A0003520E /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,10 +23,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BBD3C345275FE5910095D683 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		BBD3C347275FE6960095D683 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		BBD3C349275FE6E70095D683 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
-		BBD3C34B275FEAAF0095D683 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		BBE7BEAE275BC68A0003520E /* lessonFour */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lessonFour; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE7BEB1275BC68A0003520E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,10 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				BBE7BEB1275BC68A0003520E /* main.swift */,
-				BBD3C345275FE5910095D683 /* Protocols.swift */,
-				BBD3C34B275FEAAF0095D683 /* Classes.swift */,
-				BBD3C347275FE6960095D683 /* Extensions.swift */,
-				BBD3C349275FE6E70095D683 /* Enum.swift */,
 			);
 			path = lessonFive;
 			sourceTree = "<group>";
@@ -133,10 +121,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE7BEB2275BC68A0003520E /* main.swift in Sources */,
-				BBD3C348275FE6960095D683 /* Extensions.swift in Sources */,
-				BBD3C34A275FE6E70095D683 /* Enum.swift in Sources */,
-				BBD3C34C275FEAAF0095D683 /* Classes.swift in Sources */,
-				BBD3C346275FE5910095D683 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

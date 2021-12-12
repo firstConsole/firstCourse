@@ -1,100 +1,93 @@
 /*
-1. Создать протокол «Car» и описать свойства, общие для автомобилей, а также метод действия.
-2. Создать расширения для протокола «Car» и реализовать в них методы конкретных действий с автомобилем:
-открыть/закрыть окно, запустить/заглушить двигатель и т.д. (по одному методу на действие,
-                                                            реализовывать следует только те действия,
-                                                            реализация которых общая для всех автомобилей).
-3. Создать два класса, имплементирующих протокол «Car» - trunkCar и sportСar. Описать в них свойства,
-отличающиеся для спортивного автомобиля и цистерны.
-4. Для каждого класса написать расширение, имплементирующее протокол CustomStringConvertible.
-5. Создать несколько объектов каждого класса. Применить к ним различные действия.
-6. Вывести сами объекты в консоль.
-*/
+
+1. Реализовать свой тип коллекции «очередь» (queue) c использованием дженериков.
+2. Добавить ему несколько методов высшего порядка, полезных для этой коллекции (пример: filter для массивов)
+3. * Добавить свой subscript, который будет возвращать nil в случае обращения к несуществующему индексу.
+
+ */
 
 import Foundation
 
-let doorCondition = DoorCondition.openDoor
+struct GeneralQueue<T> {
+    var values = [T]()
 
-let passengerCarOne: CarProtocol = PassengerCar.init(carBrand: "Honda",
-                                       carModel: "Civic",
-                                       carColor: "Blue",
-                                       carReleaseYear: 2019,
-                                       carMileAge: 45769.0,
-                                       carWheelSize: 16,
-                                       carAcceleration: 8.2,
-                                       carBodyAdditions: "Spoiler",
-                                       isDoorOpen: false,
-                                       isEngineStart: true,
-                                       isHeadlightsOn: false)
+    mutating func enQueue(value: T) {
+        values.append(value)
+    }
+    func printNames() {
+        values.forEach { print($0) }
+    }
+    func countQueue() {
+        print("Люди в очереди: \(values.count)\n")
+    }
+    mutating func deQueue() {
+        values.removeLast()
+    }
+    func clientStatus(name: T) {
+        let status = clientsNames.values.map { $0 + " (клиент в очереди)" }
 
-print(passengerCarOne)
-print("Год выпуска: \(passengerCarOne.carReleaseYear.description)")
-print("Пробег, км: \(passengerCarOne.carMileAge)")
-passengerCarOne.checkEngine()
-passengerCarOne.doorOpen(the: .openDoor)
-passengerCarOne.checkHeadlights(the: .headlightsOn)
-print()
+        print(status)
+    }
+}
 
-let passengerCarTwo: CarProtocol = PassengerCar.init(carBrand: "Toyota",
-                                                     carModel: "Vista",
-                                                     carColor: "White",
-                                                     carReleaseYear: 2001,
-                                                     carMileAge: 245923.0,
-                                                     carWheelSize: 15,
-                                                     carAcceleration: 12.5,
-                                                     carBodyAdditions: "Spoiler",
-                                                     isDoorOpen: true,
-                                                     isEngineStart: true,
-                                                     isHeadlightsOn: true)
+struct Services {
+    var serviceOpen: String
+    var servicePay: String
+    var serviceMortgage: String
+    var serviceOtherQuestions: String
 
-print(passengerCarTwo)
-print("Год выпуска: \(passengerCarTwo.carReleaseYear.description)")
-print("Пробег, км: \(passengerCarTwo.carMileAge)")
-passengerCarTwo.checkEngine()
-passengerCarTwo.doorOpen(the: .openDoor)
-passengerCarTwo.checkHeadlights(the: .headlightsOn)
-print()
+    subscript(service: Int) -> String {
+        get {
+            switch service {
+            case 1:
+                return serviceOpen
+            case 2:
+                return servicePay
+            case 3:
+                return serviceMortgage
+            case 4:
+                return serviceOtherQuestions
+            default:
+                return "nil"
+            }
+        }
+    }
+}
 
-let truckCarOne = TruckCar.init(carBrand: "Mercedes",
-                             carModel: "Sprinter",
-                             carColor: "White",
-                             carReleaseYear: 2014,
-                             carMileAge: 184563.5,
-                             truckCabineVolume: 2450,
-                             truckFuelType: "ДТ",
-                             isTruckSpecial: false,
-                             isDoorOpen: false,
-                             isEngineStart: false,
-                             isHeadlightsOn: false)
+var clientsNames = GeneralQueue(values: [String]())
 
-print(truckCarOne)
-print("Год выпуска: \(truckCarOne.carReleaseYear.description)")
-print("Пробег, км: \(truckCarOne.carMileAge)")
-print("Объём кабины: \(truckCarOne.truckCabineVolume)")
-print("Тип топлива: \(truckCarOne.truckFuelType)")
-truckCarOne.checkEngine()
-truckCarOne.doorOpen(the: .openDoor)
-truckCarOne.checkHeadlights(the: .headlightsOn)
-print()
+clientsNames.enQueue(value: "Сидоров Иван")
+clientsNames.enQueue(value: "Иванов Дмитрий")
+clientsNames.enQueue(value: "Густякова Ирина")
+clientsNames.enQueue(value: "Потапова Светлана")
 
-let truckCarTwo = TruckCar.init(carBrand: "Ford",
-                             carModel: "Transit",
-                             carColor: "Black",
-                             carReleaseYear: 2004,
-                             carMileAge: 344786.5,
-                             truckCabineVolume: 2370,
-                             truckFuelType: "ДТ",
-                             isTruckSpecial: false,
-                             isDoorOpen: true,
-                             isEngineStart: true,
-                             isHeadlightsOn: true)
+clientsNames.printNames()
+clientsNames.countQueue()
 
-print(truckCarTwo)
-print("Год выпуска: \(truckCarTwo.carReleaseYear.description)")
-print("Пробег, км: \(truckCarTwo.carMileAge)")
-print("Объём кабины: \(truckCarTwo.truckCabineVolume)")
-print("Тип топлива: \(truckCarTwo.truckFuelType)")
-truckCarTwo.checkEngine()
-truckCarTwo.doorOpen(the: .openDoor)
-truckCarTwo.checkHeadlights(the: .headlightsOn)
+clientsNames.enQueue(value: "Бараболя Владимир")
 
+clientsNames.printNames()
+clientsNames.countQueue()
+clientsNames.deQueue()
+clientsNames.printNames()
+clientsNames.countQueue()
+clientsNames.deQueue()
+clientsNames.printNames()
+clientsNames.countQueue()
+
+clientsNames.clientStatus(name: "Потапова Светлана")
+
+// Создадим что-то типа поиска по первому символу. Filter
+// TODO: вынести в отдельный функционал
+let clientsFilter = clientsNames.values.filter { $0.hasPrefix("И") }
+
+print("Имена с выбранным префиксом: \(clientsFilter)")
+
+// Проверка сабскрипта
+let serviceChoice = Services(serviceOpen: "Открытие вклада",
+                             servicePay: "Оплата услуг",
+                             serviceMortgage: "Ипотека",
+                             serviceOtherQuestions: "Иные вопросы")
+
+print(serviceChoice[2])
+print(serviceChoice[5])
