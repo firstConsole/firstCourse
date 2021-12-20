@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0C1EA5276A530000CD4EB3 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0C1EA4276A530000CD4EB3 /* Classes.swift */; };
+		BB0C1EA7276A533500CD4EB3 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0C1EA6276A533500CD4EB3 /* Structs.swift */; };
+		BB0C1EA9276A536700CD4EB3 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0C1EA8276A536700CD4EB3 /* Enums.swift */; };
 		BBE7BEB2275BC68A0003520E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7BEB1275BC68A0003520E /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BB0C1EA4276A530000CD4EB3 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Classes.swift; path = ../Classes.swift; sourceTree = "<group>"; };
+		BB0C1EA6276A533500CD4EB3 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Structs.swift; path = ../Structs.swift; sourceTree = "<group>"; };
+		BB0C1EA8276A536700CD4EB3 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		BBE7BEAE275BC68A0003520E /* lessonFour */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lessonFour; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE7BEB1275BC68A0003520E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,7 +47,7 @@
 		BBE7BEA5275BC68A0003520E = {
 			isa = PBXGroup;
 			children = (
-				BBE7BEB0275BC68A0003520E /* lessonFour */,
+				BBE7BEB0275BC68A0003520E /* lessonFive */,
 				BBE7BEAF275BC68A0003520E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +60,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBE7BEB0275BC68A0003520E /* lessonFour */ = {
+		BBE7BEB0275BC68A0003520E /* lessonFive */ = {
 			isa = PBXGroup;
 			children = (
 				BBE7BEB1275BC68A0003520E /* main.swift */,
+				BB0C1EA4276A530000CD4EB3 /* Classes.swift */,
+				BB0C1EA6276A533500CD4EB3 /* Structs.swift */,
+				BB0C1EA8276A536700CD4EB3 /* Enums.swift */,
 			);
-			path = lessonFour;
+			path = lessonFive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB0C1EA7276A533500CD4EB3 /* Structs.swift in Sources */,
+				BB0C1EA5276A530000CD4EB3 /* Classes.swift in Sources */,
+				BB0C1EA9276A536700CD4EB3 /* Enums.swift in Sources */,
 				BBE7BEB2275BC68A0003520E /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
