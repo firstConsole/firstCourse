@@ -15,3 +15,4 @@ struct Services {
     let servicePrice: Int
     let weekDay: String
 }
+

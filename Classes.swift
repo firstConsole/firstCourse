@@ -54,3 +54,4 @@ final class OnlineAppointment {
         return newAppointment.doctorTarget
     }
 }
+
