@@ -16,3 +16,20 @@ enum AppointmentError: Error {
         }
     }
 }
+
+enum ServiceError: Error {
+    case priceServiceError
+    case weekdayError
+    case serviceTargetError
+
+    var errorServiceMsg: String {
+        switch self {
+        case .priceServiceError:
+            return "Недостаточно денег"
+        case .weekdayError:
+            return "В этот день запись не производится"
+        case .serviceTargetError:
+            return "Нет такого доктора или услуги"
+        }
+    }
+}

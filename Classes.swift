@@ -8,7 +8,31 @@ final class OnlineAppointment {
                        "Стоматолог": Appointment(doctorTarget: NameDoc(doctor: "Стоматолог"), price: 5700,
                                                  available: 4700)]
 
+    var services = ["УЗИ": Services(serviceName: "УЗИ", servicePrice: 3500, weekDay: weekdays.thursday),
+                    "ЭКГ": Services(serviceName: "ЭКГ", servicePrice: 2450, weekDay: weekdays.monday),
+                    "МРТ": Services(serviceName: "МРТ", servicePrice: 5670, weekDay: weekdays.monday),
+                    "Рентген": Services(serviceName: "Рентген", servicePrice: 2350, weekDay: weekdays.friday)]
+
     var deposite = 0
+
+    func onlineService(serviceTarget: String) throws -> Services {
+
+        guard let serviceChoice = services[serviceTarget] else { throw ServiceError.serviceTargetError.errorServiceMsg }
+        guard serviceChoice.servicePrice <= deposite else { throw ServiceError.priceServiceError.errorServiceMsg }
+
+        let newService = serviceChoice
+
+        deposite -= newService.servicePrice
+        services[serviceTarget] = newService
+
+        print("Вы успешно записаны на услугу: \(newService.serviceName.description)")
+
+        if deposite >= 0 {
+            print("Ваш остаток: \(deposite)₽")
+        }
+
+        return newService
+    }
 
     func onlineAppointment(doctorTarget: String) throws -> NameDoc {
 
